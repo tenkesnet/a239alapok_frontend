@@ -1,13 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
-// const addNumbers = (a, b) => {
-//   return a + b;
-// };
-// console.log(`App component is rendering: ${addNumbers(2, 3)}`);
-// function addNumbers(a, b) {
-//   return a + b;
-// }
-// const addNumbers = (a, b) => a + b;
+
+const eloadas = {
+  title: "React alapok",
+  duration: 90,
+  isFree: true,
+  tags: ["react", "frontend"],
+  show: function() {
+    console.log(`Az előadás címe: ${this.title}`);
+  },
+  arrowShow: () => {
+    console.log(`Az előadás címe: ${this.title}`);
+  },
+  address:{
+    city: "Budapest",
+    street: "Fő utca 1."
+  }
+}
+
+eloadas.title = "React alapok 2024";
+eloadas.valami = 10;
+//eloadas.show=null;
+eloadas.show();
+console.log(eloadas.valami); // Budapest
+
+
 function App() {
   return (
     <div >
