@@ -1,29 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
 
-const eloadas = {
-  title: "React alapok",
-  duration: 90,
-  isFree: true,
-  tags: ["react", "frontend"],
-  show: function() {
-    console.log(`Az előadás címe: ${this.title}`);
-  },
-  arrowShow: () => {
-    console.log(`Az előadás címe: ${this.title}`);
-  },
-  address:{
-    city: "Budapest",
-    street: "Fő utca 1."
-  }
-}
+// const speakers = ["John", "Walke", "Dan", "Sophie"];
+// const firstspeakerName = speakers[0];
+// const secondspeakerName = speakers[1];
+// const thirdspeakerName = speakers[2];
+// const fourthspeakerName = speakers[3];
+// console.log(firstspeakerName); // "John"
+// console.log(secondspeakerName); // "Walke"
+// console.log(thirdspeakerName); // "Dan"
+// console.log(fourthspeakerName); // "Sophie"
 
-eloadas.title = "React alapok 2024";
-eloadas.valami = 10;
-//eloadas.show=null;
-eloadas.show();
-console.log(eloadas.valami); // Budapest
+// const speakers = ["John", "Walke", "Dan", "Sophie"];
+// const [firstspeakerName, secondspeakerName, thirdspeakerName, fourthspeakerName] = speakers
+// console.log(firstspeakerName) // "John"
+// console.log(secondspeakerName) // "Walke"
+// console.log(thirdspeakerName) // "Dan"
+// console.log(fourthspeakerName) // "Sophie
 
+ const speakers = ["John", "Walke", "Dan", "Sophie"];
+ //const [, ...rest] = speakers // the … used is called the  spread operator
+ const refernicSzerint = speakers;
+ const masolassal = [...speakers];
+
+
+speakers.shift(); // removes the first element from the original array
+speakers.pop();
+
+console.log("refernicSzerint:", refernicSzerint); // ["Walke", "Dan", "Sophie"]
+console.log("masolassal:", masolassal); // ["John", "Walke", "Dan", "Sophie"]
 
 function App() {
   return (
