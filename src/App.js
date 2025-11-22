@@ -1,55 +1,40 @@
 import logo from './logo.svg';
 import './App.css';
 
-// const speakers = ["John", "Walke", "Dan", "Sophie"];
-// const firstspeakerName = speakers[0];
-// const secondspeakerName = speakers[1];
-// const thirdspeakerName = speakers[2];
-// const fourthspeakerName = speakers[3];
-// console.log(firstspeakerName); // "John"
-// console.log(secondspeakerName); // "Walke"
-// console.log(thirdspeakerName); // "Dan"
-// console.log(fourthspeakerName); // "Sophie"
+const person = { name: 'John', age: 30, city: 'New York' };
 
-// const speakers = ["John", "Walke", "Dan", "Sophie"];
-// const [firstspeakerName, secondspeakerName, thirdspeakerName, fourthspeakerName] = speakers
-// console.log(firstspeakerName) // "John"
-// console.log(secondspeakerName) // "Walke"
-// console.log(thirdspeakerName) // "Dan"
-// console.log(fourthspeakerName) // "Sophie
+console.log({ ...person, name: 'Johnny' });
 
- const speakers = ["John", "Walke", "Dan", "Sophie"];
- //const [, ...rest] = speakers // the … used is called the  spread operator
- const refernicSzerint = speakers;
- const masolassal = [...speakers];
+const speakers = {
+  id: 1,
+  name: "Juliet Runolf",
+  jobTitle: "Director, Marketing",
+  company: "Abernatny Group",
+  address: {
+    street: "Okaland Dtuse",
+    city: "Greenland",
+    state: "Houston",
+    country: "USA",
+  }
+}
 
-
-speakers.shift(); // removes the first element from the original array
-speakers.pop();
-
-console.log("refernicSzerint:", refernicSzerint); // ["Walke", "Dan", "Sophie"]
-console.log("masolassal:", masolassal); // ["John", "Walke", "Dan", "Sophie"]
 
 function App() {
+  const { name, jobTitle, company, address } = speakers;
+  const { street, city, state, country } = address;
   return (
-    <div >
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to kjdsfhglkgjhdsakgkgjdalkjgdh.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+    <div className="App">
+      <header className="App-header">
+    <div> <h2>Name: {name}</h2>
+        <h4>Position: {jobTitle}</h4>
+        <h4>Company: {company}</h4>
+        <h4>Street: {street}</h4>
+        <h4>City: {city}</h4>
+        <h4>State: {state}</h4>
+        <h4>Country: {country}</h4>
       </div>
-      <h1>New Heading</h1>
+      </header>
+      
     </div>
   );
 }
