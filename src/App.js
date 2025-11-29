@@ -9,9 +9,7 @@ function App() {
     <div className="App">
       <div>
         <h1>Welcome to {name}</h1>
-        <p>This is a sample React application.</p>
-       
-        
+        <p>This is a sample React application.</p>              
         <SearchSpeaker />
         <SearchSpeaker />
       </div>

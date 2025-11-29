@@ -1,17 +1,25 @@
- import React,{useState} from "react";
- const SearchSpeaker = () =>{
-    const [searchText, setSearchText] = useState('');
+import React, { useState } from "react";
+const SearchSpeaker = () => {
+    const [searchText, setSearchText] = useState('cégtár');
+    const [cegNev, setCegNev] = useState('Pallas Platform');
+    const peldaClick= () => {
+        setSearchText('React Kft');
+    }
+    const tesztClick= () => {
+        console.log(searchText);
+    }
     return (
         <div>
-             <label htmlFor="search">Search speaker:
-                 </label>
-             <input id="search" type="text" onChange={e =>
-                 setSearchText(e.target.value)} />
-             <p>
-                 Searching for <strong>{searchText}
-                     </strong>
-             </p>
+            <label htmlFor="search" onClick={e => setSearchText('Label clicked')}>Search speaker:
+            </label>
+            <input id="search" type="text" onChange={e =>
+                setSearchText(e.target.value)} onBlur={e => setSearchText('Pokol')}/>
+            <p>
+                Searching for <strong>{searchText}</strong> in {cegNev}
+            </p>
+            <button onClick={peldaClick}>Példa gomb</button>
+            <button onClick={tesztClick}>Teszt gomb</button>
         </div>
     );
- }
- export default SearchSpeaker;
+}
+export default SearchSpeaker;
