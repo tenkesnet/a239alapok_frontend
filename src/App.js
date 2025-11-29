@@ -1,5 +1,5 @@
 import './App.css';
-import UserList from './components/v1/UserList';
+import UserList from './components/v2/UserList';
 
 
 function App() {

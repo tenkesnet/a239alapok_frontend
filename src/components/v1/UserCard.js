@@ -9,7 +9,7 @@ function UserCard({ user }) {
             <button onClick={() => setIsExpanded(!isExpanded)}>
                 {isExpanded ? 'Összecsuk' : 'Kibont'}
             </button>
-            {isExpanded && <p>Bővebben: {user.details}</p>}
+            {isExpanded && <p>Bővebben: {user.details}</p>}            
         </div>
     );
 }
