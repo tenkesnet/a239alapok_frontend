@@ -1,33 +1,25 @@
-import React, { useState } from "react";
+import React, { use, useState, useEffect } from "react";
 const SearchSpeaker = () => {
     const [searchText, setSearchText] = useState('cégtár');
-    const [cegNev, setCegNev] = useState('Pallas Platform');
-    const peldaClick = () => {
-        setSearchText('React Kft');
-    }
-    const tesztClick = (e) => {
-        console.log(searchText);
-    }
-    function handleChange(e) {
-        console.log(e);
-        e.target.className = 'alert';
-
-    }
+    /*
+    useEffect(() => {
+    // Mellékhatás logika (pl. fetch)
+    return () => {
+        // Cleanup (pl. előfizetés leiratkozás)
+    };
+    }, [függőségek]); // Opcionális tömb
+    */
+    useEffect(() => {
+        console.log('Effect fut: ', Math.random());
+    }, []);
     return (
         <div>
-            <label htmlFor="search" onClick={e => {
-                setSearchText('Label clicked');
-                setCegNev('Labeled cegnev');
-            }
-            } on>Search speaker:
-            </label>
-            <input id="search" type="text" onClick={handleChange} onChange={e =>
-                setSearchText(e.target.value)} onBlur={e => { setSearchText('Pokol'); e.target.className = ''; }} />
+            <label htmlFor="search">Search speaker:</label>
+            <input id="search" type="text" onChange={e => setSearchText(e.target.value)} />
             <p>
-                Searching for <strong>{searchText}</strong> in {cegNev}
+                Searching for <strong>{searchText}</strong>
             </p>
-            <button onClick={e => peldaClick()}>Példa gomb</button>
-            <button onClick={handleChange}>Teszt gomb</button>
+
         </div>
     );
 }
