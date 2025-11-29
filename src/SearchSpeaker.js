@@ -10,14 +10,14 @@ const SearchSpeaker = () => {
     }
     return (
         <div>
-            <label htmlFor="search" onClick={e => setSearchText('Label clicked')}>Search speaker:
+            <label htmlFor="search" onClick={e => {setSearchText('Label clicked');setCegNev('Labeled cegnev');}}>Search speaker:
             </label>
             <input id="search" type="text" onChange={e =>
                 setSearchText(e.target.value)} onBlur={e => setSearchText('Pokol')}/>
             <p>
                 Searching for <strong>{searchText}</strong> in {cegNev}
             </p>
-            <button onClick={peldaClick}>Példa gomb</button>
+            <button onClick={e=>peldaClick()}>Példa gomb</button>
             <button onClick={tesztClick}>Teszt gomb</button>
         </div>
     );
