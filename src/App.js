@@ -1,5 +1,5 @@
 import './App.css';
-import SearchSpeaker from './SearchSpeaker';
+import SearchSpeaker from './components/test/SearchSpeaker';
 
 
 function App() {
