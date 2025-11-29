@@ -1,5 +1,4 @@
 import './App.css';
-import SpeakerProfile from './SpeakerProfile';
 import SearchSpeaker from './SearchSpeaker';
 
 
@@ -10,8 +9,7 @@ function App() {
       <div>
         <h1>Welcome to {name}</h1>
         <p>This is a sample React application.</p>              
-        <SearchSpeaker />
-        <SearchSpeaker />
+        <SearchSpeaker name='elso'/>
       </div>
     </div>
   );

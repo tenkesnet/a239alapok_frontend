@@ -1,23 +1,20 @@
 import React, { use, useState, useEffect } from "react";
-const SearchSpeaker = () => {
-    const [searchText, setSearchText] = useState('cégtár');
-    /*
+const SearchSpeaker = ({name}) => {
+    const [value1, setValue1] = useState(0);
+    const [value2, setValue2] = useState(0);
+    let sum = parseFloat(value1) + parseFloat(value2);
     useEffect(() => {
-    // Mellékhatás logika (pl. fetch)
-    return () => {
-        // Cleanup (pl. előfizetés leiratkozás)
-    };
-    }, [függőségek]); // Opcionális tömb
-    */
-    useEffect(() => {
-        console.log('Effect fut: ', Math.random());
+        //sum = parseFloat(value1) + parseFloat(value2);
     }, []);
     return (
         <div>
-            <label htmlFor="search">Search speaker:</label>
-            <input id="search" type="text" onChange={e => setSearchText(e.target.value)} />
+            <label htmlFor="search">szam1:</label>
+            <input id="value1" type="text" onChange={e => setValue1(e.target.value)} />
+            <label htmlFor="search">szam2:</label>
+            <input id="value2" type="text" onChange={e => setValue2(e.target.value)} />
+            
             <p>
-                Searching for <strong>{searchText}</strong>
+                Összeg: <strong>{sum}</strong>
             </p>
 
         </div>
