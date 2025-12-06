@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import UserList from './components/v2/UserList';
-
+import Lifecycles from './components/lifecicley.component';
+import logo from './logo.svg';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,19 +14,29 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className="App">
-        <h1>Üdv a Felhasználói alkalmazásban!</h1>
-        <h2>Az élet értelme: {this.state.azEletErtelem}</h2>
-        <button onClick={() => {
-          this.setState({ azEletErtelem: this.state.azEletErtelem + this.state.incrementValue });
-          console.log('Az élet értelme most már:', this.state.azEletErtelem);
-          setTimeout(() => {
-            console.log('Időzített élet értelme:', this.state.azEletErtelem);
-          }, 1);
-        }
-        }>Növeld az élet értelmét!</button>
-        <pre>{JSON.stringify(this.state, null, 2)}</pre>
-        {/*<UserList />*/}
+      <div className='App'>
+        <header className='App-header'>
+          <img src={logo} className='App-logo' alt='logo' />
+          <button
+            onClick={() =>
+              this.setState(state => ({
+                showChild: !state.showChild
+              }))
+            }
+          >
+            Toggle Lifecycles
+          </button>
+          <button
+            onClick={() =>
+              this.setState(state => ({
+                text: state.text + '_hello'
+              }))
+            }
+          >
+            Update Text
+          </button>
+          {this.state.showChild ? <Lifecycles text={this.state.text} /> : null}
+        </header>
       </div>
     );
 
